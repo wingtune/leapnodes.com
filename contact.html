@@ -324,7 +324,7 @@
 
     <script>
         // Replace with your deployed Apps Script Web App URL
-        const GOOGLE_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzNsPNZwytbJmkeQJgZ1ldDf8VfbXL7fyRbKDOCIMDGTti9Fos8_XuPLh9ZmCEBQuNv/exec';
+        const GOOGLE_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzock3ZmZcPW-JVCYjYfSbesPuyVYdiNkGH9mqZsAA2ngmD5fxGoKtiuqsMZrNgulIl/exec';
 
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -347,15 +347,13 @@
             formMessage.style.display = 'none';
 
             try {
-                const res = await fetch(GOOGLE_SHEETS_WEBHOOK, {
+                // no-cors avoids preflight/CORS blocks; response is opaque so we assume success if no network error
+                await fetch(GOOGLE_SHEETS_WEBHOOK, {
                     method: 'POST',
-                    mode: 'cors',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
-
-                const result = await res.json();
-                if (!result.ok) throw new Error(result.error || 'Submit failed');
 
                 formMessage.className = 'form-message success';
                 formMessage.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
