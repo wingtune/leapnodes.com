@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Axiomflow</title>
+    <title>Privacy Policy - AxiomOrbit</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -37,12 +37,44 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 2px 4px rgba(37, 211, 102, 0.2));
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover .logo-icon svg {
+            filter: drop-shadow(0 4px 8px rgba(37, 211, 102, 0.4));
+        }
+
+        .logo-text {
             font-size: 24px;
             font-weight: 800;
             background: linear-gradient(135deg, #25D366, #128C7E);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-decoration: none;
+            letter-spacing: -0.6px;
+            transition: all 0.3s ease;
         }
 
         .content {
@@ -133,13 +165,47 @@
             .content {
                 padding: 40px 0;
             }
+
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Axiomflow</a>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+                        <!-- Network/Constellation Nodes with improved spacing -->
+                        <!-- Top node -->
+                        <circle cx="24" cy="12" r="3.5" fill="#25D366"/>
+                        <!-- Bottom left node -->
+                        <circle cx="12" cy="30" r="3.5" fill="#25D366"/>
+                        <!-- Bottom right node -->
+                        <circle cx="36" cy="30" r="3.5" fill="#25D366"/>
+                        <!-- Bottom center node -->
+                        <circle cx="24" cy="36" r="3.5" fill="#25D366"/>
+                        <!-- Connection lines -->
+                        <line x1="24" y1="12" x2="12" y2="30" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="24" y1="12" x2="36" y2="30" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="12" y1="30" x2="24" y2="36" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Subtle orbital curve -->
+                        <path d="M 10 30 Q 24 18 38 30" stroke="#25D366" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">AxiomOrbit</span>
+            </a>
         </div>
     </header>
 
@@ -148,7 +214,7 @@
             <h1>Privacy Policy</h1>
             <p class="last-updated">Last Updated: December 4, 2024</p>
 
-            <p>Axiomflow ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our WhatsApp AI automation services.</p>
+            <p>AxiomOrbit ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our WhatsApp AI automation services.</p>
 
             <h2>1. Information We Collect</h2>
             
@@ -228,7 +294,7 @@
                 <li><strong>Opt-Out:</strong> Unsubscribe from marketing communications</li>
                 <li><strong>Restriction:</strong> Limit how we process your data</li>
             </ul>
-            <p>To exercise these rights, contact us at <a href="mailto:privacy@yourbrand.com" style="color: #25D366;">privacy@yourbrand.com</a></p>
+            <p>To exercise these rights, contact us at <a href="mailto:privacy@axiomorbit.com" style="color: #25D366;">privacy@axiomorbit.com</a></p>
 
             <h2>7. Cookies and Tracking</h2>
             <p>We use cookies and similar technologies for functionality, analytics, and marketing. For detailed information, please see our <a href="cookie-policy.html" style="color: #25D366;">Cookie Policy</a>.</p>
@@ -253,9 +319,9 @@
             <h2>12. Contact Us</h2>
             <p>For privacy-related questions or requests, contact us:</p>
             <ul>
-                <li><strong>Email:</strong> privacy@yourbrand.com</li>
-                <li><strong>Data Protection Officer:</strong> dpo@yourbrand.com</li>
-                <li><strong>Contact Form:</strong> <a href="contact.html" style="color: #25D366;">yourbrand.com/contact</a></li>
+                <li><strong>Email:</strong> privacy@axiomorbit.com</li>
+                <li><strong>Data Protection Officer:</strong> dpo@axiomorbit.com</li>
+                <li><strong>Contact Form:</strong> <a href="contact.html" style="color: #25D366;">axiomorbit.com/contact</a></li>
             </ul>
 
             <h2>13. Legal Basis for Processing (GDPR)</h2>
@@ -291,7 +357,7 @@
                 <a href="terms.html">Terms & Conditions</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <p style="color: #666;">© 2024 Axiomflow. All rights reserved.</p>
+            <p style="color: #666;">© 2024 AxiomOrbit. All rights reserved.</p>
         </div>
     </footer>
 </body>
