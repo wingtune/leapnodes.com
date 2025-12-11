@@ -64,6 +64,8 @@
             justify-content: space-between;
             align-items: center;
             pointer-events: auto;
+            position: relative;
+            z-index: 11;
         }
 
         .logo {
@@ -120,6 +122,10 @@
             cursor: pointer;
             font-size: 16px;
             letter-spacing: 0.2px;
+            display: inline-block;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: rgba(37, 211, 102, 0.3);
+            touch-action: manipulation;
         }
 
         .cta-button:hover {
@@ -915,6 +921,25 @@
 
             .cta-section h2 {
                 font-size: 36px;
+            }
+
+            .cta-button {
+                padding: 16px 28px;
+                font-size: 16px;
+                min-height: 48px;
+                min-width: 140px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                -webkit-tap-highlight-color: rgba(37, 211, 102, 0.4);
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            header {
+                padding: 20px 0;
             }
         }
 
