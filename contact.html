@@ -29,12 +29,44 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 2px 4px rgba(37, 211, 102, 0.2));
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover .logo-icon svg {
+            filter: drop-shadow(0 4px 8px rgba(37, 211, 102, 0.4));
+        }
+
+        .logo-text {
             font-size: 24px;
             font-weight: 800;
             background: linear-gradient(135deg, #25D366, #128C7E);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-decoration: none;
+            letter-spacing: -0.6px;
+            transition: all 0.3s ease;
         }
 
         .hero { padding: 100px 0 60px; text-align: center; }
@@ -135,6 +167,9 @@
             .hero { padding: 60px 0 40px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
+            .logo-icon { width: 32px; height: 32px; }
+            .logo-text { font-size: 20px; }
+            .logo { gap: 10px; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
             .contact-form, .contact-info, .map-section { padding: 30px 24px; }
             .map-placeholder { height: 300px; }
@@ -144,7 +179,28 @@
 <body>
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Axiomflow</a>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+                        <!-- Network/Constellation Nodes with improved spacing -->
+                        <!-- Top node -->
+                        <circle cx="24" cy="12" r="3.5" fill="#25D366"/>
+                        <!-- Bottom left node -->
+                        <circle cx="12" cy="30" r="3.5" fill="#25D366"/>
+                        <!-- Bottom right node -->
+                        <circle cx="36" cy="30" r="3.5" fill="#25D366"/>
+                        <!-- Bottom center node -->
+                        <circle cx="24" cy="36" r="3.5" fill="#25D366"/>
+                        <!-- Connection lines -->
+                        <line x1="24" y1="12" x2="12" y2="30" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="24" y1="12" x2="36" y2="30" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="12" y1="30" x2="24" y2="36" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Subtle orbital curve -->
+                        <path d="M 10 30 Q 24 18 38 30" stroke="#25D366" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">AxiomOrbit</span>
+            </a>
         </div>
     </header>
 
@@ -324,7 +380,7 @@
 
     <script>
         // Replace with your deployed Apps Script Web App URL
-        const GOOGLE_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzock3ZmZcPW-JVCYjYfSbesPuyVYdiNkGH9mqZsAA2ngmD5fxGoKtiuqsMZrNgulIl/exec';
+        const GOOGLE_SHEETS_WEBHOOK = 'PASTE_YOUR_WEB_APP_URL_HERE';
 
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
