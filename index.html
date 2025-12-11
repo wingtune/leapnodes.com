@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -151,6 +151,11 @@
         }
 
         .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
@@ -159,6 +164,8 @@
 
         .hero-content {
             text-align: left;
+            position: relative;
+            z-index: 2;
         }
 
         .hero::before {
@@ -172,6 +179,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .badge {
@@ -1424,4 +1433,3 @@
 </body>
 </html>
 
- 
